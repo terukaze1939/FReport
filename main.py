@@ -51,9 +51,18 @@ def usr_input():
 			for _ in range(count):
 				res = f.report_user(id)
 				if res[0] == True:
-					print("[*] Report success")
+					print("[*] Report User success")
 				else:
 					print("[!] Report error")
+		elif cmd == "report_post":
+			url = str(input("post_url_> "))
+			count = int(input("num report_>"))
+			for _ in range(count):
+				res = f.report_post(url)
+				if res[0] == True:
+					print("[*] Report Post Success")
+				else:
+					print("[!] " + res[2])
 		elif cmd == "exit":
 			state = False
 			f.terminate()

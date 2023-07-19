@@ -9,7 +9,7 @@ log in | Here login using email and password, if login is successful then cookie
 cookie_login | If there is mycookie.pkl you can use this command instead of using the "login" command
 
 report_user | this command you can use the report user feature, then enter the id from the user profile.
-
+report_post | Same with report_user but using url post instead id post
 
 
 # keep in mind!

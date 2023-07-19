@@ -126,11 +126,32 @@ class FB:
 		self.driver.find_element(By.XPATH, "//input[@type='checkbox' and @name='checked']").click()
 		self.driver.find_element(By.XPATH, "//input[@name='action' and @type='submit']").click()
 		if 'Confirmación de la denuncia' in self.driver.page_source:
-			return (False, "report_failed", "report_user()")
+			return (False, "report_user_failed", "report_user()")
 		else:
-			return (True, "report_success", "report_user()")
+			return (True, "report_user_success", "report_user()")
 
 
+	def report_post(self, url):
+		print("[*] Opening post")
+		self.load(url)
+		if 'Más' in self.driver.page_source:
+			print("[*] Opening post options")
+			self.driver.find_element(By.XPATH, "//a[text()='Más']").click()
+			print("[*] Choosing 'Report post'")
+			self.driver.find_element(By.XPATH, "//input[@value='RESOLVE_PROBLEM']").click()
+			print("[*] Submitting")
+			self.driver.find_element(By.XPATH, "//input[@type='submit' and @name='submit']").click()
+			print("[*] Choosing 'spam'")
+			self.driver.find_element(By.XPATH, "//input[@type='radio' and @value='spam']").click()
+			print("[*] Submitting")
+			self.driver.find_element(By.XPATH, "//input[@type='submit']").click()
+
+			if 'Selecciona un problema' in self.driver.page_source:
+				return (False, 'report_post_failed', 'report_post()')
+			else:
+				return (True, 'report_post_success','report_post()')
+		else:
+			return (False, "user_not_found", "report_post()")
 
 
 
