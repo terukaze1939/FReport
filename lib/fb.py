@@ -3,6 +3,7 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.chrome.service import Service
 from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.chrome.options import Options
+from selenium_stealth import stealth
 import pickle,time,json
 
 class FB:
@@ -12,13 +13,24 @@ class FB:
 
 		self.service = Service(ChromeDriverManager().install())
 		self.options = Options()
-		self.options.add_argument('user-agent='+self.ua)
-		self.options.add_argument('--disable-extension')
+		self.options.add_experimental_option("excludeSwitches", ["enable-automation"])
+		self.options.add_experimental_option("useAutomationExtension", False)
 		self.options.add_argument('--headless')
 		self.options.add_argument('--no-sandbox')
 		self.options.add_argument('--disable-gpu')
 		self.options.add_argument('--log-level=1')
 		self.driver = webdriver.Chrome(service=self.service, options=self.options)
+
+		stealth(
+			self.driver,
+			user_agent=self.ua,
+			languages=["es_ES", "es"],
+			vendor="Google Inc.",
+			platform="Aarch64",
+			webgl_vendor="Intel Inc.",
+			renderer="Intel Iris OpenGL Engine.",
+			fix_hairline=True,
+		)
 
 		self.url_profile = "https://m.facebook.com/profile.php"
 		self.url_login = "https://m.facebook.com/login.php"
@@ -104,7 +116,8 @@ class FB:
 		self.get_element("input", "name", "view_post").click()
 
 
-		href = self.driver.find_element(By.XPATH, "//div[@role='article']/div[2]/div[2]/a[1]").get_attribute('href')
+		# href = self.driver.find_element(By.XPATH, "//div[@role='article']/div[2]/div[2]/a[1]").get_attribute('href')
+		href = self.driver.find_elements(By.XPATH, "//a[text()='Historia completa']")[0].get_attribute('href')
 		if href != "" or href != None:
 			return (True, "new_post_success", str(href))
 		else:
