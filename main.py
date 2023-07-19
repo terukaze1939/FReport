@@ -54,6 +54,8 @@ def usr_input():
 					print("[*] Report User success")
 				else:
 					print("[!] Report error")
+				print("[i] Sleeping for 3 sec")
+				time.sleep(3)
 		elif cmd == "report_post":
 			url = str(input("post_url_> "))
 			count = int(input("num report_>"))
@@ -63,6 +65,8 @@ def usr_input():
 					print("[*] Report Post Success")
 				else:
 					print("[!] " + res[2])
+				print("[i] Sleeping for 3 sec")
+				time.sleep(3)
 		elif cmd == "exit":
 			state = False
 			f.terminate()
@@ -74,5 +78,3 @@ if __name__ == "__main__":
 	except Exception as e:
 		print(e)
 		f.terminate()
-
-# nvkbygvp@guerrillamailblock.com
