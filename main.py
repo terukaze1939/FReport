@@ -2,11 +2,36 @@ from lib import fb
 import sys,time,getpass
 
 f = None
+
+def banner():
+	banner = """
+	FReport
+
+	(MENU)
+	- login [Login to facebook account to get cookies]
+	- cookie_login [Login using exisiting cookies. This is important command after you've logged in using 'login' command]
+	- report_user [Report someone profile using profile id]
+	- report_post [Report someone post using post url]
+	- rip [Spam #rip hastag on someone timeline]
+
+
+	(OPTIONAL COMMAND)
+	- new_post [Create new post]
+
+	
+	- help [Print this menu]	
+	- exit [I'm out]
+
+	"""
+
+	return banner
 def main():
 	global f
 	f = fb.FB()
 
 	usr_input()
+
+
 
 def usr_input():
 	state = True
@@ -81,6 +106,8 @@ def usr_input():
 					break
 				print("[i] Sleeping for 5 sec")
 				time.sleep(5)
+		elif cmd == "help":
+			print(banner())
 		elif cmd == "exit":
 			state = False
 			f.terminate()
