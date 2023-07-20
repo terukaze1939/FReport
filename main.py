@@ -36,7 +36,6 @@ def main():
 def usr_input():
 	state = True
 	while state:
-		t = random.randint(10,15)
 
 		cmd = input("_> ")
 		cmd = cmd.lower()
@@ -76,6 +75,8 @@ def usr_input():
 			id = input("profile_id_> ")
 			count = int(input("num report_> "))
 			for _ in range(count):
+				t = random.randint(10,15)
+
 				res = f.report_user(id)
 				if res[0] == True:
 					print("[*] Report User success")
@@ -88,6 +89,8 @@ def usr_input():
 			url = str(input("post_url_> "))
 			count = int(input("num report_> "))
 			for _ in range(count):
+				t = random.randint(10,15)
+
 				res = f.report_post(url)
 				if res[0] == True:
 					print("[*] Report Post Success")
@@ -100,6 +103,8 @@ def usr_input():
 			id = str(input("profile_id_> "))
 			count = int(input("num report_> "))
 			for _ in range(count):
+				t = random.randint(10,15)
+
 				res = f.rip(id)
 				if res[0] == True:
 					print("[*] Rip post has been sent : " + res[2])
