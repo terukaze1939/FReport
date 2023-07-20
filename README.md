@@ -16,17 +16,19 @@ This tool can report facebook account using id from user profile.
 
 ```python main.py```
 
+```_> help``` To print help menu
+
 ## TO-DO
 | feature  | status |
 | ---    |  --- |
-| Account login and create cookies | [x] OK |
-| Login using existing cookies | [x] OK |
-| Report someone profile using profile id | [x] OK |
-| Report someone post using url profile | [x] OK |
-| Spam #RIP hashtag to someone profile | [x] OK |
-| Can run this program on termux | [x] OK |
-| Report all user post | [ ] ON_PROGRESS |
-| Report user with multiple/different account | [ ] ON_PROGRESS |
+| Account login and create cookies | OK |
+| Login using existing cookies | OK |
+| Report someone profile using profile id | OK |
+| Report someone post using url profile | OK |
+| Spam #RIP hashtag to someone profile | OK |
+| Can run this program on termux | OK |
+| Report all user post | ON_PROGRESS |
+| Report user with multiple/different account | ON_PROGRESS |
 
 
 
