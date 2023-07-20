@@ -16,19 +16,19 @@ This tool can report facebook account using id from user profile.
 
 ```python main.py```
 
-## Menu
+## TO-DO
+| feature  | status |
+| ---    |  --- |
+| Account login and create cookies | [x] OK |
+| Login using existing cookies | [x] OK |
+| Report someone profile using profile id | [x] OK |
+| Report someone post using url profile | [x] OK |
+| Spam #RIP hashtag to someone profile | [x] OK |
+| Can run this program on termux | [x] OK |
+| Report all user post | [ ] ON_PROGRESS |
+| Report user with multiple/different account | [ ] ON_PROGRESS |
 
-there are several options is
 
-login | Here login using email and password, if login is successful then cookies will be stored in the "cookies/mycookie.pkl" folder. After the cookie is saved, make sure to enter the command "cookie_login"
-
-cookie_login | If there is mycookie.pkl you can use this command instead of using the "login" command
-
-report_user | this command you can use the report user feature, then enter the id from the user profile.
-
-report_post | Same with report_user but using url post instead id post
-
-rip         | spam #RIP hastag at someone timeline
 
 
 ### Thxxx! :3 [luanon404](https://github.com/luanon404/Selenium-On-Termux-Android)
