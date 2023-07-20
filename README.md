@@ -12,6 +12,9 @@ report_user | this command you can use the report user feature, then enter the i
 
 report_post | Same with report_user but using url post instead id post
 
+rip         | spam #RIP hastag at someone timeline
+
+## This tool will make your account blocked or restricted, don't use this tool too often.
 
 # keep in mind!
 # This tool is for education purposes only, don't use this tool carelessly or do anything illegal.
