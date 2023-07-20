@@ -2,6 +2,17 @@
 
 This tool can report facebook account using id from user profile.
 
+
+## Install
+
+```python -m pip install -r requirements.txt```
+
+### Run
+
+```python main.py```
+
+## Menu
+
 there are several options is
 
 log in | Here login using email and password, if login is successful then cookies will be stored in the "cookies/mycookie.pkl" folder. After the cookie is saved, make sure to enter the command "cookie_login"
