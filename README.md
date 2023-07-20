@@ -14,7 +14,7 @@ report_post | Same with report_user but using url post instead id post
 
 rip         | spam #RIP hastag at someone timeline
 
-## This tool will make your account blocked or restricted, don't use this tool too often.
+## This tool will make your account blocked or restricted, don't use this tool too often. ( Make sure you're using secondary account or not primary account)
 
 # keep in mind!
 # This tool is for education purposes only, don't use this tool carelessly or do anything illegal.
