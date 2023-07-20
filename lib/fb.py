@@ -44,7 +44,7 @@ class FB:
 		self.options.add_argument('--headless=new')
 
 		self.driver = webdriver.Chrome(options=self.options)
-		
+
 
 	def win(self):
 		self.service = Service(ChromeDriverManager().install())
@@ -155,7 +155,6 @@ class FB:
 		self.get_element("input", "name", "view_post").click()
 
 
-		# href = self.driver.find_element(By.XPATH, "//div[@role='article']/div[2]/div[2]/a[1]").get_attribute('href')
 		href = self.driver.find_elements(By.XPATH, "//a[text()='Historia completa']")[0].get_attribute('href')
 		if href != "" or href != None:
 			return (True, "new_post_success", str(href))
@@ -213,7 +212,6 @@ class FB:
 		if '¿Qué estás pensando?' in self.driver.page_source:
 			c = uuid.uuid4()
 			self.driver.find_element(By.XPATH, "//textarea[@name='xc_message']").send_keys(self.rip_text.replace("{}", str(c)))
-			# print("[i] Current url : " +self.driver.current_url)
 
 			self.driver.find_element(By.XPATH, "//input[@name='view_post']").click()
 			href = self.driver.find_element(By.XPATH, "//div[@role='article']/div[2]/div[3]/a[2]").get_attribute('href')
@@ -238,4 +236,3 @@ class FB:
 
 	def terminate(self):
 		self.driver.close()
-		# pass
