@@ -5,22 +5,58 @@ from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.chrome.options import Options
 from selenium_stealth import stealth
 from getuseragent import UserAgent
-import pickle,time,json,uuid
+import pickle,time,json,uuid,sys
 
 
 class FB:
 	def __init__(self):
+
 		self.ua = """Mozilla/5.0 (Linux; Android 11; MP02 Build/RP1A.201005.001; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/92.0.4515.131 Mobile Safari/537.36[FBAN/EMA;FBLC/es_ES;FBAV/289.0.0.18.116;]"""
 		self.rip_text = """#RIP I am so sorry to hear about your loss. May you find comfort in the love and support of those around you {}"""
 
-		self.service = Service(ChromeDriverManager().install())
+		self.service = None
 		self.options = Options()
+
+		self.driver = None
+
+		self.device()
+
+
+
+
+		self.url_profile = "https://m.facebook.com/profile.php"
+		self.url_login = "https://m.facebook.com/login.php"
+		self.url_home = "https://m.facebook.com/home.php"
+		self.profile_target = "https://m.facebook.com/profile.php?id={}"
+
+	def device(self):
+		if sys.platform == "win32" or sys.platform == "win64":
+			self.win()
+		elif sys.platform == "linux":
+			self.linux()
+		else:
+			print("[!] Unsupported device")
+
+	def linux(self):
+		self.options.add_argument('--no-sandbox')
+		self.options.add_argument("--disable-dev-shm-usage")
+		self.options.add_argument("user-agent="+self.ua)
+		self.options.add_argument('--headless=new')
+
+		self.driver = webdriver.Chrome(options=self.options)
+		
+
+	def win(self):
+		self.service = Service(ChromeDriverManager().install())
+
 		self.options.add_experimental_option("excludeSwitches", ["enable-automation"])
 		self.options.add_experimental_option("useAutomationExtension", False)
 		self.options.add_argument('--headless')
+		self.options.add_argument('--disable-dev-shm-usage')
 		self.options.add_argument('--no-sandbox')
 		self.options.add_argument('--disable-gpu')
-		self.options.add_argument('--log-level=1')
+		self.options.add_argument('--log-level=1')		
+
 		self.driver = webdriver.Chrome(service=self.service, options=self.options)
 
 		stealth(
@@ -33,11 +69,6 @@ class FB:
 			renderer="Intel Iris OpenGL Engine.",
 			fix_hairline=True,
 		)
-
-		self.url_profile = "https://m.facebook.com/profile.php"
-		self.url_login = "https://m.facebook.com/login.php"
-		self.url_home = "https://m.facebook.com/home.php"
-		self.profile_target = "https://m.facebook.com/profile.php?id={}"
 
 	def input(self, name, value):
 		self.driver.find_element(By.XPATH, "//input[@name='"+name+"']").send_keys(value)

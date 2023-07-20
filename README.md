@@ -7,6 +7,11 @@ This tool can report facebook account using id from user profile.
 
 ```python -m pip install -r requirements.txt```
 
+## For termux user
+```yes | pkg install x11-repo -y```
+```yes | pkg install tur-repo -y```
+```yes | pkg install chromium -y```
+
 ### Run
 
 ```python main.py```
