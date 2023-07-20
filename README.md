@@ -15,7 +15,7 @@ This tool can report facebook account using id from user profile.
 
 there are several options is
 
-log in | Here login using email and password, if login is successful then cookies will be stored in the "cookies/mycookie.pkl" folder. After the cookie is saved, make sure to enter the command "cookie_login"
+login | Here login using email and password, if login is successful then cookies will be stored in the "cookies/mycookie.pkl" folder. After the cookie is saved, make sure to enter the command "cookie_login"
 
 cookie_login | If there is mycookie.pkl you can use this command instead of using the "login" command
 
