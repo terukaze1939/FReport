@@ -54,6 +54,7 @@ def usr_input():
 					print("[*] Report User success")
 				else:
 					print("[!] Report error")
+					break
 				print("[i] Sleeping for 3 sec")
 				time.sleep(3)
 		elif cmd == "report_post":
@@ -65,6 +66,7 @@ def usr_input():
 					print("[*] Report Post Success")
 				else:
 					print("[!] " + res[2])
+					break
 				print("[i] Sleeping for 3 sec")
 				time.sleep(3)
 		elif cmd == "rip":
@@ -76,6 +78,7 @@ def usr_input():
 					print("[*] Rip post has been sent : " + res[2])
 				else:
 					print("[*] Cannot post on someone timeline")
+					break
 				print("[i] Sleeping for 5 sec")
 				time.sleep(5)
 		elif cmd == "exit":
