@@ -4,18 +4,20 @@ from selenium.webdriver.chrome.service import Service
 from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.chrome.options import Options
 from selenium_stealth import stealth
+from getuseragent import UserAgent
 import pickle,time,json,uuid
+
 
 class FB:
 	def __init__(self):
-		self.ua = """Mozilla/5.0 (Linux; Android 11; MP02 Build/RP1A.201005.001; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/92.0.4515.131 Mobile Safari/537.36[FBAN/EMA;FBLC/es_ES;FBAV/289.0.0.18.116;]"""
+		# self.ua = """Mozilla/5.0 (Linux; Android 11; MP02 Build/RP1A.201005.001; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/92.0.4515.131 Mobile Safari/537.36[FBAN/EMA;FBLC/es_ES;FBAV/289.0.0.18.116;]"""
 		self.rip_text = """#RIP I am so sorry to hear about your loss. May you find comfort in the love and support of those around you {}"""
 
 		self.service = Service(ChromeDriverManager().install())
 		self.options = Options()
 		self.options.add_experimental_option("excludeSwitches", ["enable-automation"])
 		self.options.add_experimental_option("useAutomationExtension", False)
-		# self.options.add_argument('--headless')
+		self.options.add_argument('--headless')
 		self.options.add_argument('--no-sandbox')
 		self.options.add_argument('--disable-gpu')
 		self.options.add_argument('--log-level=1')
@@ -46,8 +48,14 @@ class FB:
 	def get_elements(self, element, name, val):
 		return self.driver.find_elements(By.XPATH, "//"+element+"[@"+name+"='"+val+"']")
 
+	def changeUA(self):
+		useragent = UserAgent("mobile").Random() + "[FBAN/EMA;FBLC/es_ES;FBAV/289.0.0.18.116;]"
+		self.driver.execute_cdp_cmd("Network.setUserAgentOverride", {"userAgent": useragent})
+
 	def load(self,url):
+		self.changeUA()
 		self.driver.get(url)
+		print(self.driver.execute_script("return navigator.userAgent"))
 
 
 	def check(self):
