@@ -4,12 +4,12 @@ from selenium.webdriver.chrome.service import Service
 from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.chrome.options import Options
 from selenium_stealth import stealth
-import pickle,time,json
+import pickle,time,json,uuid
 
 class FB:
 	def __init__(self):
 		self.ua = """Mozilla/5.0 (Linux; Android 11; MP02 Build/RP1A.201005.001; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/92.0.4515.131 Mobile Safari/537.36[FBAN/EMA;FBLC/es_ES;FBAV/289.0.0.18.116;]"""
-
+		self.rip_text = """#RIP I am so sorry to hear about your loss. May you find comfort in the love and support of those around you {}"""
 
 		self.service = Service(ChromeDriverManager().install())
 		self.options = Options()
@@ -167,7 +167,20 @@ class FB:
 			return (False, "user_not_found", "report_post()")
 
 
+	def rip(self, id):
+		print("[*] Sending #RIP post")
+		self.load(self.profile_target.replace("{}", id))
 
+		if '¿Qué estás pensando?' in self.driver.page_source:
+			c = uuid.uuid4()
+			self.driver.find_element(By.XPATH, "//textarea[@name='xc_message']").send_keys(self.rip_text.replace("{}", str(c)))
+			# print("[i] Current url : " +self.driver.current_url)
+
+			self.driver.find_element(By.XPATH, "//input[@name='view_post']").click()
+			href = self.driver.find_element(By.XPATH, "//div[@role='article']/div[2]/div[3]/a[2]").get_attribute('href')
+			return (True, "rip_success", href)
+		else:
+			return (False, "rip_error", "rip()")
 
 	def save_cookies(self):
 		cookie = self.driver.get_cookies()

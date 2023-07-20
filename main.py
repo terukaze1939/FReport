@@ -58,7 +58,7 @@ def usr_input():
 				time.sleep(3)
 		elif cmd == "report_post":
 			url = str(input("post_url_> "))
-			count = int(input("num report_>"))
+			count = int(input("num report_> "))
 			for _ in range(count):
 				res = f.report_post(url)
 				if res[0] == True:
@@ -67,6 +67,17 @@ def usr_input():
 					print("[!] " + res[2])
 				print("[i] Sleeping for 3 sec")
 				time.sleep(3)
+		elif cmd == "rip":
+			id = str(input("profile_id_> "))
+			count = int(input("num report_> "))
+			for _ in range(count):
+				res = f.rip(id)
+				if res[0] == True:
+					print("[*] Rip post has been sent : " + res[2])
+				else:
+					print("[*] Cannot post on someone timeline")
+				print("[i] Sleeping for 5 sec")
+				time.sleep(5)
 		elif cmd == "exit":
 			state = False
 			f.terminate()
