@@ -1,5 +1,5 @@
 from lib import fb
-import sys,time,getpass
+import sys,time,getpass,random
 
 f = None
 
@@ -18,7 +18,7 @@ def banner():
 	(OPTIONAL COMMAND)
 	- new_post [Create new post]
 
-	
+
 	- help [Print this menu]	
 	- exit [I'm out]
 
@@ -34,6 +34,7 @@ def main():
 
 
 def usr_input():
+	t = random.randint(10,15)
 	state = True
 	while state:
 		cmd = input("_> ")
@@ -80,8 +81,8 @@ def usr_input():
 				else:
 					print("[!] Report error")
 					break
-				print("[i] Sleeping for 3 sec")
-				time.sleep(3)
+				print("[i] Sleeping for "+str(t)+" sec")
+				time.sleep(t)
 		elif cmd == "report_post":
 			url = str(input("post_url_> "))
 			count = int(input("num report_> "))
@@ -92,8 +93,8 @@ def usr_input():
 				else:
 					print("[!] " + res[2])
 					break
-				print("[i] Sleeping for 3 sec")
-				time.sleep(3)
+				print("[i] Sleeping for "+str(t)+" sec")
+				time.sleep(t)
 		elif cmd == "rip":
 			id = str(input("profile_id_> "))
 			count = int(input("num report_> "))
@@ -104,8 +105,8 @@ def usr_input():
 				else:
 					print("[*] Cannot post on someone timeline")
 					break
-				print("[i] Sleeping for 5 sec")
-				time.sleep(5)
+				print("[i] Sleeping for "+str(t)+" sec")
+				time.sleep(t)
 		elif cmd == "help":
 			print(banner())
 		elif cmd == "exit":
