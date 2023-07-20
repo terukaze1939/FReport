@@ -34,9 +34,10 @@ def main():
 
 
 def usr_input():
-	t = random.randint(10,15)
 	state = True
 	while state:
+		t = random.randint(10,15)
+
 		cmd = input("_> ")
 		cmd = cmd.lower()
 
