@@ -1,0 +1,41 @@
+{
+	"err": "Terjadi sebuah kendala, gagal melanjutkan.",
+	"login_err": "Gagal masuk.",
+	"login_invalid_email": "Email tidak ditemukan.",
+	"login_invalid_password": "Kata sandi salah.",
+	"login_invalid_old_password": "Kamu memasukan kata sandi yang lama",
+	"login_checkpoint": "Checkpoint muncul, gunakan kode autentikasi untuk melanjutkan.",
+	"login_checkpont_err": "Verifikasi gagal.",
+	"login_checkpoint_verify_err": "Checkpoint gagal, kemungkinan facebook meng-suspend akunmu.",
+	"login_checkpoint_code_err": "Kode autentikasi salah.",
+
+
+	"cookie_save_err": "Gagal menyimpan cookie.",
+	"cookie_load_err": "Gagal memuat cookie.",
+
+	"report_user_not_found": "Pengguna tidak ditemukan.",
+	"report_user_err": "Tidak dapat melaporkan pengguna.",
+
+	"unsupported_device": "Perangkat tidak mendukung program ini.",
+
+
+	"rip_err": "Tidak bisa mengirim postingan di profil target.",
+
+
+
+	"set_default_login_arg_not_found": "Tidak dapat menemukan perintah ?. Hanya tersedia manual, cookie_login",
+	"set_default_login_not_found": "Pilih [manual, cookie_login]",
+	"set_default_login_to_manual": "Mengatur login bawaan ke [manual]",
+	"set_default_login_to_cookie_login": "Mengatur login bawaan ke [cookie_login]",
+
+	"program_exit": "Keluar dari program.",
+
+
+
+	"login_ok": "Berhasil masuk.",
+	"login_save_device": "Menyimpan browser",
+	"login_checkpoint_ok": "Checkpoint berhasil dilewati.",
+
+	"cookie_save_ok": "Cookie berhasil disimpan.",
+	"cookie_load_ok": "Cookie berhasil dimuat."
+}
