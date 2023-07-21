@@ -103,7 +103,7 @@ def usr_input():
 			id = str(input("profile_id_> "))
 			count = int(input("num report_> "))
 			for _ in range(count):
-				t = random.randint(10,15)
+				t = random.randint(5,15)
 
 				res = f.rip(id)
 				if res[0] == True:
