@@ -1,13 +1,15 @@
 from selenium import webdriver
-from selenium.webdriver.chrome.optoins import Options
+from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.chrome.service import Service
 from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.common.by import By
+from lib.lang import LANG
 import sys
 
-class Driver:
+class DRIVER:
 	def __init__(self):
-		self.ua = """Mozilla/5.0 (Linux; Android 11; MP02 Build/RP1A.201005.001; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/92.0.4515.131 Mobile Safari/537.36[FBAN/EMA;FBLC/es_ES;FBAV/289.0.0.18.116;]"""
+		self.lang = LANG()
+		self.ua = """Mozilla/5.0 (Linux; Android 11; MP02 Build/RP1A.201005.001; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/92.0.4515.131 Mobile Safari/537.36[FBAN/EMA;FBLC/{};FBAV/289.0.0.18.116;]"""
 		self.opt = Options()
 		self.opt.add_argument('--no-sandbox')
 		self.opt.add_argument('--disable-gpu')
@@ -32,5 +34,7 @@ class Driver:
 			return webdriver.Chrome(options=self.opt)
 
 		else:
-			print("[!] Unsupported device")
-			sys.exit(0)
+			return False
+
+	def terminate(self):
+		self.driver.close()
