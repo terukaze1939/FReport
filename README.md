@@ -14,7 +14,7 @@ This tool can report facebook account using id from user profile.
 
 ### Run
 
-```python main.py```
+```python run.py```
 
 ```_> help``` To print help menu
 
