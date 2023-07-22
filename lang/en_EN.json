@@ -68,7 +68,7 @@
     "profile_create_new_post_text_blank": "Do not leave the text empty",
 
 
-    "sleeping":"Sleeping for {} sec.'",
+    "sleeping":"Sleeping for {} sec.",
 
     "banner_login_desc": "Login account using email and password",
     "banner_cookie_login_desc": "Login account using exisiting cookies",

@@ -60,8 +60,9 @@ class FACEBOOK:
 
 			self.driver.find_element(By.XPATH, "//input[@type='submit']").click()
 
-			self.driver.find_element(By.XPATH, "//input[@type='checkbox' @name='checked']").click()
-			self.driver.find_element(By.XPATH, "//input[@type='submit']").click()
+			if 'Konfirmasi laporan' in self.driver.page_source:
+				self.driver.find_element(By.XPATH, "//input[@type='checkbox' @name='checked']").click()
+				self.driver.find_element(By.XPATH, "//input[@type='submit']").click()
 
 			if 'Konfirmasi laporan' in self.driver.page_source:
 				return (False, 'report_post_error')
