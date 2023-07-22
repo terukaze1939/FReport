@@ -1,41 +1,85 @@
 {
-	"err": "Terjadi sebuah kendala, gagal melanjutkan.",
-	"login_err": "Gagal masuk.",
-	"login_invalid_email": "Email tidak ditemukan.",
-	"login_invalid_password": "Kata sandi salah.",
-	"login_invalid_old_password": "Kamu memasukan kata sandi yang lama",
-	"login_checkpoint": "Checkpoint muncul, gunakan kode autentikasi untuk melanjutkan.",
-	"login_checkpont_err": "Verifikasi gagal.",
-	"login_checkpoint_verify_err": "Checkpoint gagal, kemungkinan facebook meng-suspend akunmu.",
-	"login_checkpoint_code_err": "Kode autentikasi salah.",
+    "err": "Terjadi masalah, gagal melanjutkan.",
+    "login_err": "Login gagal.",
+    "login_form_invalid": "Email atau password tidak valid.",
+    "login_invalid_old_password": "Anda memasukkan password lama.",
+    "login_checkpoint": "Checkpoint muncul, gunakan kode otentikasi untuk melanjutkan.",
+    "login_checkpoint_err": "Verifikasi gagal.",
+    "login_checkpoint_verify_err": "Checkpoint gagal, akun Facebook Anda mungkin ditangguhkan.",
+    "login_checkpoint_code_err_msg": "Kode verifikasi salah.",
+
+    "login_cookie_msg": "Login menggunakan cookie",
+    "login_cookie_ok": "Login menggunakan cookie berhasil",
+    "login_cookie_error": "Login menggunakan cookie gagal",
+
+    "login_email_blank": "Jangan biarkan email kosong.",
+    "login_password_blank": "Jangan biarkan password kosong.",
+
+    "cookie_save_err": "Gagal menyimpan cookie.",
+    "cookie_load_err": "Gagal memuat cookie.",
+
+    "report_user_not_found": "Pengguna tidak ditemukan.",
+    "report_user_error": "Tidak dapat melaporkan pengguna.",
+    "report_user_ok": "Berhasil melaporkan pengguna",
+
+    "report_post_ok": "Post berhasil dilaporkan",
+    "report_post_error": "Gagal melaporkan post",
+    "report_post_not_found": "Post tidak ditemukan",
+
+    "unsupported_device": "Perangkat tidak didukung oleh program ini.",
+
+    "rip_err": "Tidak dapat memposting pada profil target.",
+    "rip_success": "Laporan berhasil dikirim",
+
+    "input_profile_id": "Jangan biarkan id profil kosong",
+    "input_post_url": "Jangan biarkan url post kosong",
+    "input_num_loop": "Jangan masukkan angka kurang dari atau sama dengan nol",
+
+    "set_lang": "Atur bahasa ke ?",
+    "set_lang_not_found": "Bahasa tidak ditemukan atau [?] tidak tersedia. Bahasa yang tersedia:\n @",
+    "set_lang_arg_error": "Mengatur bahasa memerlukan 1 argumen.",
+
+    "set_checkpoint_to_skip": "Atur checkpoint ke [skip].",
+    "set_checkpoint_to_noskip": "Atur checkpoint ke [noskip].",
+    "set_checkpoint_arg_not_found": "Opsi yang tersedia hanya [skip, noskip].",
+    "set_checkpoint_arg_error": "Mengatur checkpoint memerlukan 1 argumen.",
+
+    "set_default_login_arg_not_found": "Perintah ? tidak ditemukan. Pilihan yang tersedia: manual, cookie_login",
+    "set_default_login_not_found": "Pilih [manual, cookie_login].",
+    "set_default_login_to_manual": "Atur login default ke [manual].",
+    "set_default_login_to_cookie_login": "Atur login default ke [cookie_login].",
+
+    "program_exit": "Keluar dari program.",
+    "restart_driver": "Mengulang driver.",
+
+    "login_ok": "Berhasil masuk.",
+    "login_save_device": "Berhasil menyimpan browser.",
+    "login_save_device_err": "Gagal menyimpan browser, tetapi login berhasil.",
+    "login_checkpoint_ok": "Checkpoint berhasil dilewati.",
+
+    "cookie_save_ok": "Cookie berhasil disimpan.",
+    "cookie_load_ok": "Cookie berhasil dimuat.",
+
+    "config_checkpoint_msg": "Konfigurasi [checkpoint=skip].",
 
 
-	"cookie_save_err": "Gagal menyimpan cookie.",
-	"cookie_load_err": "Gagal memuat cookie.",
-
-	"report_user_not_found": "Pengguna tidak ditemukan.",
-	"report_user_err": "Tidak dapat melaporkan pengguna.",
-
-	"unsupported_device": "Perangkat tidak mendukung program ini.",
+    "profile_create_new_post_ok": "Post berhasil dibuat",
+    "profile_create_new_post_error": "Gagal membuat post",
+    "profile_create_new_post_text_blank": "Jangan biarkan teks kosong",
 
 
-	"rip_err": "Tidak bisa mengirim postingan di profil target.",
+    "sleeping": "Tidur selama {} detik.'",
 
-
-
-	"set_default_login_arg_not_found": "Tidak dapat menemukan perintah ?. Hanya tersedia manual, cookie_login",
-	"set_default_login_not_found": "Pilih [manual, cookie_login]",
-	"set_default_login_to_manual": "Mengatur login bawaan ke [manual]",
-	"set_default_login_to_cookie_login": "Mengatur login bawaan ke [cookie_login]",
-
-	"program_exit": "Keluar dari program.",
-
-
-
-	"login_ok": "Berhasil masuk.",
-	"login_save_device": "Menyimpan browser",
-	"login_checkpoint_ok": "Checkpoint berhasil dilewati.",
-
-	"cookie_save_ok": "Cookie berhasil disimpan.",
-	"cookie_load_ok": "Cookie berhasil dimuat."
+    "banner_login_desc": "Login akun menggunakan email dan password",
+    "banner_cookie_login_desc": "Login akun menggunakan cookie yang sudah ada",
+    "banner_rip_spam_desc": "Spam post dengan hashtag RIP (#RIP) pada profil target",
+    "banner_report_user_desc": "Laporkan akun target sebagai akun palsu",
+    "banner_report_post_desc": "Laporkan post menggunakan URL post",
+    "banner_set_default_login_desc": "Mengatur login default saat menggunakan perintah 'login'. (Contoh, set_default_login cookie_login) [cookie_login, manual]",
+    "banner_set_checkpoint_desc": "Mengatur sesi checkpoint, apakah akan melanjutkan atau melewatkannya (Misalnya, jika checkpoint muncul saat login, Anda diminta untuk memasukkan kode verifikasi untuk melanjutkan) default [checkpoint=noskip] [skip,noskip]",
+    "banner_set_lang_desc": "Mengatur bahasa program (contoh, set_lang en_EN)",
+    "banner_restart_driver_desc": "Mengulang driver",
+    "banner_config_desc": "Menampilkan semua konfigurasi",
+    "banner_clear_desc": "Membersihkan terminal",
+    "banner_exit_desc": "Keluar dari program"
 }

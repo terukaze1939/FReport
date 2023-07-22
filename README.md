@@ -18,6 +18,11 @@ This tool can report facebook account using id from user profile.
 
 ```_> help``` To print help menu
 
+
+## Default Language en_EN
+you can change the language with
+```cmd_> set_lang id_ID```
+
 ## TO-DO
 | feature  | status |
 | ---    |  --- |

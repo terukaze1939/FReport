@@ -1,2 +1,5 @@
-cookies/mycookie.pkl
+main.py
+cookies/*
 lib/__pycache__
+lib/fb.py
+!cookies/stored_cookies

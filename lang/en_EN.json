@@ -22,12 +22,17 @@
     "report_user_error": "Could not report the user.",
     "report_user_ok": "User successfully reported",
 
+    "report_post_ok": "Post was successfully reported",
+    "report_post_error": "Post failed to report",
+    "report_post_not_found": "Post not found",
+
     "unsupported_device": "Device not supported by this program.",
 
     "rip_err": "Cannot post on the target profile.",
     "rip_success": "Report sent successfully",
 
     "input_profile_id": "Don't leave the profile id empty",
+    "input_post_url": "Don't leave the post_url empty",
     "input_num_loop": "Do not enter a number less than or equal to zero",
 
     "set_lang": "Set language to ?",
@@ -69,6 +74,7 @@
     "banner_cookie_login_desc": "Login account using exisiting cookies",
     "banner_rip_spam_desc": "Spam posts with the hashtag RIP (#RIP) on a target's profile",
     "banner_report_user_desc": "Report the target account as a fake account",
+    "banner_report_post_desc":"Report a post using the post url",
     "banner_set_default_login_desc": "Setting the default login when using the 'login' command. (For example, set_default_login cookie_login) [cookie_login, manual]",
     "banner_set_checkpoint_desc": "Set the checkpoint session, whether to continue or skip it (For example, if a checkpoint appears when logging in, you are prompted to enter a verification code to continue) default [checkpoint=noskip] [skip,noskip]",
     "banner_set_lang_desc": "Sets the program language (eg set_lang en_EN)",

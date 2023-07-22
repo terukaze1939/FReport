@@ -4,3 +4,5 @@ class URL:
 
 	profile_target = "https://m.facebook.com/profile.php?id={}"
 	profile_user = "https://m.facebook.com/profile.php"
+
+	remembering = "https://m.facebook.com/help/contact/234739086860192"

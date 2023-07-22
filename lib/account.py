@@ -12,53 +12,68 @@ class ACCOUNT:
 	def login(self, email, passwd):
 		# open login page
 		self.driver.get(self._url.login)
-
+		
 		# fill login form and submit
 		self.driver.find_element(By.XPATH, "//input[@name='email']").send_keys(email)
 		self.driver.find_element(By.XPATH, "//input[@name='pass']").send_keys(passwd)
 		self.driver.find_element(By.XPATH, "//input[@type='submit']").click()
 
-		if 'checkpoint' in self.current_url:
+		if 'checkpoint' in self.driver.current_url:
 			return (False, "login_checkpoint")
 		elif 'home' in self.driver.current_url:
 			return (True, "login_ok")
-		elif self.lang["login_invalid_password"] in self.driver.page_source:
-			return (False, "login_invalid_password")
-		elif self.lang["login_invalid_email"] in self.driver.page_soruce:
-			return (False, "login_invalid_email")
-		elif self.lang["login_invalid_old_password"] in self.driver.page_source:
+		elif self.lang.text("login_form_invalid") in self.driver.page_source:
+			return (False, "login_form_invalid")
+		elif self.lang.text("login_invalid_old_password") in self.driver.page_source:
 			return (False, "login_invalid_old_password")
 		elif 'save-device' in self.driver.current_url:
 			return (True, "login_save_device")
 		else:
-			return (False, "login_error")
+			return (False, "login_err")
+
+	def cookie_login(self, email):
+		self.driver.get(self._url.login)
+		self.load_cookies(email)
+		self.driver.get(self._url.home)
+
+		if 'Apa yang Anda pikirkan sekarang' in self.driver.page_source:
+			return (True, "login_cookie_ok")
+		else:
+			return (False, "login_cookie_error")
 
 	def save_device(self):
 		self.driver.find_element(By.XPATH,"//input[@type='submit']").click()
-		if '#apa-yang-kamu-pikirkan?' in self.driver.page_source:
+		if 'Apa yang Anda pikirkan sekarang' in self.driver.page_source:
 			return (True, "login_ok")
 		elif 'gettingstarted' in self.driver.current_url:
 			self.driver.find_element(By.XPATH, "//a[@class='ba z']").click()
 			if 'home' in self.driver.current_url:
 				return (True, "login_ok")
 			else:
-				return (False, "login_error")
+				return (False, "login_err")
 		else:
-			return (False, "login_error")
+			return (False, "login_err")
 
 	def checkpoint(self, code):
-		self.find_element(By.XPATH, "//input[@name='approvals_code']").send_keys(code)
-		self.find_element(By.XPATH, "//input[@type='submit']").click()
+		self.driver.find_element(By.XPATH, "//input[@name='approvals_code']").send_keys(code)
+		self.driver.find_element(By.XPATH, "//input[@type='submit']").click()
 
-		if '#save-browser' in self.driver.page_source:
+		if "Ingat Browser" in self.driver.page_source or "Simpan Browser" in self.driver.page_source:
 			self.driver.find_element(By.XPATH, "//input[@type='submit']").click()
 			if 'home' in self.driver.current_url:
 				return (True, "login_checkpoint_ok")
-			elif '#blocked' in self.driver.page_source:
+			elif "Tinjau Upaya" in self.driver.page_source:
 				return (False, "login_checkpoint_verify_err")
 			else:
 				return (False, "login_checkpoint_err")
 
+		elif "Tinjau Upaya" in self.driver.page_source:
+			return (False, "login_checkpoint_verify_err")
+
+		elif "tidak cocok" in self.driver.page_source:
+			return (False, "login_checkpoint_code_err")
+		else:
+			return (False, "login_checkpoint_err")
 
 
 	def save_cookies(self, username):
