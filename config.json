@@ -1,6 +1,6 @@
 {
     "checkpoint": "noskip",
-    "default_login": "cookie_login",
-    "lang": "id_ID",
-    "last_logged_in_email": "hwoulsetx00"
+    "default_login": "login",
+    "lang": "en_EN",
+    "last_logged_in_email": ""
 }
