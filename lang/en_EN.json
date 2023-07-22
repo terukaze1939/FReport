@@ -1,0 +1,79 @@
+{
+    "err": "An issue occurred, failed to proceed.",
+    "login_err": "Login failed.",
+    "login_form_invalid": "Invalid email or password.",
+    "login_invalid_old_password": "You entered the old password.",
+    "login_checkpoint": "Checkpoint appeared, use the authentication code to continue.",
+    "login_checkpoint_err": "Verification failed.",
+    "login_checkpoint_verify_err": "Checkpoint failed, your Facebook account might be suspended.",
+    "login_checkpoint_code_err_msg": "Verification code is incorrect.",
+
+    "login_cookie_msg": "Login using cookie",
+    "login_cookie_ok": "Login using cookie successful",
+    "login_cookie_error": "Login using cookie failed",
+
+    "login_email_blank": "Do not leave the email empty.",
+    "login_password_blank": "Do not leave the password empty.",
+
+    "cookie_save_err": "Failed to save cookie.",
+    "cookie_load_err": "Failed to load cookie.",
+
+    "report_user_not_found": "User not found.",
+    "report_user_error": "Could not report the user.",
+    "report_user_ok": "User successfully reported",
+
+    "unsupported_device": "Device not supported by this program.",
+
+    "rip_err": "Cannot post on the target profile.",
+    "rip_success": "Report sent successfully",
+
+    "input_profile_id": "Don't leave the profile id empty",
+    "input_num_loop": "Do not enter a number less than or equal to zero",
+
+    "set_lang": "Set language to ?",
+    "set_lang_not_found": "Language not found or [?] is not available. Available languages:\n @",
+    "set_lang_arg_error": "Setting language requires 1 argument.",
+
+    "set_checkpoint_to_skip": "Set checkpoint to [skip].",
+    "set_checkpoint_to_noskip": "Set checkpoint to [noskip].",
+    "set_checkpoint_arg_not_found": "Only available options are [skip, noskip].",
+    "set_checkpoint_arg_error": "Setting checkpoint requires 1 argument.",
+
+    "set_default_login_arg_not_found": "Command ? not found. Only available: manual, cookie_login",
+    "set_default_login_not_found": "Choose [manual, cookie_login].",
+    "set_default_login_to_manual": "Set default login to [manual].",
+    "set_default_login_to_cookie_login": "Set default login to [cookie_login].",
+
+    "program_exit": "Exiting the program.",
+    "restart_driver": "Restarting the driver.",
+
+    "login_ok": "Successfully logged in.",
+    "login_save_device": "Successfully saved the browser.",
+    "login_save_device_err": "Failed to save the browser, but login successful.",
+    "login_checkpoint_ok": "Checkpoint successfully bypassed.",
+
+    "cookie_save_ok": "Cookie successfully saved.",
+    "cookie_load_ok": "Cookie successfully loaded.",
+
+    "config_checkpoint_msg": "Config [checkpoint=skip].",
+
+
+    "profile_create_new_post_ok": "Post created successfully",
+    "profile_create_new_post_error": "Post failed to create",
+    "profile_create_new_post_text_blank": "Do not leave the text empty",
+
+
+    "sleeping":"Sleeping for {} sec.'",
+
+    "banner_login_desc": "Login account using email and password",
+    "banner_cookie_login_desc": "Login account using exisiting cookies",
+    "banner_rip_spam_desc": "Spam posts with the hashtag RIP (#RIP) on a target's profile",
+    "banner_report_user_desc": "Report the target account as a fake account",
+    "banner_set_default_login_desc": "Setting the default login when using the 'login' command. (For example, set_default_login cookie_login) [cookie_login, manual]",
+    "banner_set_checkpoint_desc": "Set the checkpoint session, whether to continue or skip it (For example, if a checkpoint appears when logging in, you are prompted to enter a verification code to continue) default [checkpoint=noskip] [skip,noskip]",
+    "banner_set_lang_desc": "Sets the program language (eg set_lang en_EN)",
+    "banner_restart_driver_desc":"Restart the driver",
+    "banner_config_desc": "Shows all configurations",
+    "banner_clear_desc": "Clear terminal",
+    "banner_exit_desc": "Exit the program"
+}
